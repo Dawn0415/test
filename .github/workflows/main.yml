@@ -1,26 +1,31 @@
-name: Update JSON on Web Request
+name: Update JSON
 
 on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
-  schedule:
-    - cron: '0 * * * *'
 
 jobs:
-  update_json:
+  update-json:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3. 10'
-    - name: Install dependencies
-      run: pip install -r requirements.txt
-    - name: Run Python script
-      run: python app.py
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Update JSON file
+        run: python app.py
+      - name: Commit changes
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "action@github.com"
+          git add json/实时.json
+          git commit -m "Update JSON file"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
