@@ -1,21 +1,26 @@
-name: Run Python Script
+name: Update JSON on Web Request
 
 on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
+  schedule:
+    - cron: '0 * * * *'
 
 jobs:
-  run_script:
+  update_json:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.x'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run Python script
-        run: python app.py
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3. 10'
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Run Python script
+      run: python //app.py
