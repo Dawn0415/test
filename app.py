@@ -2,6 +2,8 @@ import urllib.request
 import json
 import jsonpath
 import time
+import subprocess
+import os
 
 url=r"https://aqiapp.daqi110.com/report/city/rank/group?group=28&period=0"
 #  请求头
@@ -31,3 +33,12 @@ dict["city"]=city
 json=json.dumps(dict)
 with open(r".\json\实时.json",'w') as f:
     f.write(json)
+
+    
+# 执行app.py文件
+subprocess.run(["python", "app.py"])
+
+# 提交更新后的json文件到GitHub仓库中
+os.system("git add json/实时.json")
+os.system("git commit -m 'Update JSON file'")
+os.system("git push origin master")
