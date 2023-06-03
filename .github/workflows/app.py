@@ -31,5 +31,5 @@ dict["aqi"]=aqi
 dict["city"]=city
 
 json=json.dumps(dict)
-with open(r".//json/实时.json",'w') as f:
+with open(r"./json/实时.json",'w') as f:
     f.write(json)
