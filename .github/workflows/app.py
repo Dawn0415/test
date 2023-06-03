@@ -31,6 +31,6 @@ dict["aqi"]=aqi
 dict["city"]=city
 
 json=json.dumps(dict)
-console.log(json)
+
 with open(r"https://raw.githubusercontent.com/Dawn0415/test/master/json/%E5%AE%9E%E6%97%B6.json",'w') as f:
     f.write(json)
