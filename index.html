@@ -40,7 +40,7 @@
     <script src="./js/flexible.js"></script> 
    <script> window.onload = function() {
             var xhr = new XMLHttpRequest();
-            xhr.open('POST', 'https://github.com/Dawn0415/test', true);
+            xhr.open('POST', 'https://api.github.com/repos/Dawn0415/test/dispatches', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json');
             xhr.onload = function() {
