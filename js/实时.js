@@ -69,7 +69,7 @@ $(document).ready(function(){
         myChart.setOption({
             xAxis:{
             data:data.city,
-            console.log(json)
+            console.log(data.city)
         },
             
         series:{
