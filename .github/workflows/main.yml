@@ -20,4 +20,4 @@ jobs:
       - name: Update data
         run: python app.py
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ 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 }}
