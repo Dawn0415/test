@@ -27,3 +27,4 @@ jobs:
         author_email: 746141186@qq.com
         message: "Update data"
         add: 'json/实时.json'
+        token: ${{ secrets.ACCESS_TOKEN }}
