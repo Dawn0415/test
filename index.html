@@ -40,10 +40,11 @@
     <script src="./js/flexible.js"></script> 
    <script> window.onload = function() {
             var xhr = new XMLHttpRequest();
-            xhr.setRequestHeader('Authorization', 'Bearer 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');
+            
             xhr.open('POST', 'https://api.github.com/repos/Dawn0415/test/dispatches', true);
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+            xhr.setRequestHeader('Authorization', 'Bearer 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');
             xhr.onload = function() {
                 if (xhr.status === 204) {
                     console.log('Workflow dispatched successfully!');
