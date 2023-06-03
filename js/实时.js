@@ -68,7 +68,8 @@ $(document).ready(function(){
     $.get('https://raw.githubusercontent.com/Dawn0415/test/master/json/%E5%AE%9E%E6%97%B6.json').done(function(data){
         myChart.setOption({
             xAxis:{
-            data:data.city
+            data:data.city,
+            console.log(json)
         },
             
         series:{
