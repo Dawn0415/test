@@ -38,6 +38,23 @@
     </div>
     </section>
     <script src="./js/flexible.js"></script> 
+   <script> window.onload = function() {
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://github.com/Dawn0415/test', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Accept', 'application/vnd.github.v3+json');
+            xhr.onload = function() {
+                if (xhr.status === 204) {
+                    console.log('Workflow dispatched successfully!');
+                } else {
+                    console.error('Failed to dispatch workflow:', xhr.statusText);
+                }
+            };
+            xhr.send(JSON.stringify({
+                "event_type": "update_data",
+                "client_payload": {}
+                }));
+            };</script>
 <!--     <a href="./index.html"><div class="return"><button class="niceButton5"><span>返回首页</span></button></div></a> -->
 </body>
 </html>
